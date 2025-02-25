@@ -6,25 +6,29 @@ import starlight from '@astrojs/starlight'
 export default defineConfig({
   integrations: [
     starlight({
-      title: 'Stack-track Review',
+      title: 'Stack Track Review',
       social: {
         github: 'https://github.com/withastro/starlight',
       },
       sidebar: [
         {
-          label: 'Guides',
-          items: [{ label: 'Example Guide', slug: 'guides/example' }],
+          label: 'Code Quality',
+          autogenerate: {
+            directory: 'code-quality',
+          }
         },
         {
-          label: 'Reference',
-          autogenerate: { directory: 'reference' },
+          label: 'Dependencies',
+          autogenerate: {
+            directory: 'dependencies',
+          }
         },
         {
-          label: 'Typescript',
-          items: [
-            { label: 'Base Check', slug: 'typescript-errors/base-check' },
-          ],
-        },
+          label: 'Performance and Optimization',
+          autogenerate: {
+            directory: 'performance-optimization',
+          }
+        }
       ],
     }),
   ],

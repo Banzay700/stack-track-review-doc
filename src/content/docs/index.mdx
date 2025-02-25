@@ -1,17 +1,66 @@
+
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
+title: Stack Track Review
+description: Check out the Stack Track Review
 template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: This report provides a overview of the structure and quality of the project code written in React Native (Expo) with TypeScript.
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/hero.svg
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Get started
+      link: /code-quality/code-structure-and-organization
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
-      icon: external
-      variant: minimal
+
 ---
+import { FileTree } from '@astrojs/starlight/components';
+
+## Project Structure
+This project is structured in the following way:
+
+
+<FileTree>
+
+    - .expo/
+    - android/
+    - assets/
+    - configs/
+        - firebase/
+    - ios/
+    - patches/
+    - src/
+        - api/
+        - app/
+        - components/
+        - constants/
+        - context/
+        - hocs/
+        - hooks/
+        - icons/
+        - navigation/
+        - providers/
+        - services/
+        - states/
+        - theme/
+        - typings/
+        - utils/
+    - .cursorrules
+    - .env
+    - .eslintignore
+    - .eslintrc.js
+    - .gitignore
+    - .prettierrc.js
+    - app.config.ts
+    - babel.config.js
+    - biome.json
+    - eas.json
+    - expo-env.d.ts
+    - index.js
+    - metro.config.js
+    - package.json
+    - README.md
+    - tsconfig.json
+    - yarn.lock
+
+
+</FileTree>

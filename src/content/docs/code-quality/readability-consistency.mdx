@@ -1,0 +1,19 @@
+---
+title: Readability & Consistency
+description: Readability & Consistency
+---
+This section covers errors related to code style consistency, file naming, and project structure.
+
+## Mistakes in hook naming
+Inconsistent naming of hook files: there is no single naming convention.
+
+![Hooks errors](/src/assets/hooks.webp)
+
+Some files are not consistent with each other (`useColorScheme.ts` vs. `useColorScheme.web.ts`), others do not follow the common kebab-case pattern (`useDayTimeAnimatedData.ts`, `usePrevious.ts`). They are written in camelCase, while the rest of the hooks are written in kebab-case.
+
+The `use-create-cycle` hook is placed in a separate folder, but instead of the hook itself, it contains the `index.ts` file. This can make it difficult to navigate and use the hook, as the folder name alludes to a specific hook rather than a module with multiple files.
+
+It is necessary to unify the names to ensure consistency across the codebase.
+Most hooks are written in kebab-case, but some files use camelCase or PascalCase. This breaks the consistency in the project.
+
+## Mistakes in component naming
