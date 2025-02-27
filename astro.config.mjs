@@ -8,14 +8,16 @@ export default defineConfig({
     starlight({
       title: 'Stack Track Review',
       social: {
-        github: 'https://github.com/withastro/starlight',
+        github: 'https://github.com/Banzay700/stack-track-review-doc',
       },
       sidebar: [
         {
           label: 'Code Quality',
-          autogenerate: {
-            directory: 'code-quality',
-          }
+          items: [
+            { label: 'Readability & Consistency', link: 'code-quality/readability-consistency' },
+            { label: 'Typescript & Linting', link: 'code-quality/typescript-safety' },
+            { label: 'Structure & Organization', link: 'code-quality/code-structure-and-organization',  },
+          ]
         },
         {
           label: 'Dependencies',
@@ -24,7 +26,7 @@ export default defineConfig({
           }
         },
         {
-          label: 'Performance and Optimization',
+          label: 'Performance & Optimization',
           autogenerate: {
             directory: 'performance-optimization',
           }

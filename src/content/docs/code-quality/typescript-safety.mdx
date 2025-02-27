@@ -1,0 +1,52 @@
+---
+title: Typescript & Linting
+description: Typescript & Linting
+---
+import { Aside,Code } from '@astrojs/starlight/components';
+import tsCheck from './code/ts.sh?raw';
+import lintCheck from './code/lint.sh?raw';
+
+This section describes all the errors found in the project that are related to checking types and general linting rules.
+
+
+## Typescript check
+The static TypeScript type checker found **32 errors** in the project.
+
+This means that the code contains type mismatches, misuse of APIs, missing types, or other type safety violations that the TypeScript compiler cannot resolve.
+
+<Code code={tsCheck} lang="sh" type='terminal' title='npm run tsc' />
+
+
+Reasons why you shouldn't make such mistakes:
+- **Reduced code reliability:** type errors often lead to unpredictable runtime behavior.
+- **Loss of TS benefits:** the main purpose of using TypeScript is to provide type safety. Ignoring type errors negates this advantage and effectively turns TypeScript into regular JavaScript with additional syntax.
+- **Loss of TS benefits:** the main purpose of using TypeScript is to provide type safety. Ignoring type errors negates this advantage and effectively turns TypeScript into regular JavaScript with additional syntax.
+- **Security issues:** improper type handling can lead to security vulnerabilities, especially when dealing with user data or APIs.
+- **Scalability issues:** as an application grows, unchecked type errors can accumulate, creating technical debt that becomes increasingly difficult to resolve.
+- **Deterioration of the development experience:** lack of correct types deprives developers of IDE auto-completion and hints, which slows down development.
+- **Decreased documentation quality:** TypeScript types serve as a form of code documentation. Incorrect types mislead developers.
+- **Problems with updating dependencies:** incorrect types can hide incompatibilities with new versions of libraries.
+
+
+
+<Aside type="danger" title=' '>
+    Type errors can pose a serious danger to the production version of an application.
+    For example, an attempt to call a method on `undefined` or access a property of a non-existent object will cause the application to crash.
+</Aside>
+
+## Linting check
+
+Static code analysis using a linter revealed **293 errors** and **41 warnings** in the project.
+This indicates significant violations of the established coding rules, style, and potential code quality issues.
+
+
+<Code code={lintCheck} lang="sh" type='terminal' title='npm run lint' />
+
+Reasons why this is problematic:
+1. **Reduced code quality:** leaders identify potential bugs, suboptimal patterns, and anti-patterns that can lead to bugs, performance, and security issues.
+2. **Inconsistent code base:** a high number of linter errors often indicates inconsistent adherence to coding standards, making code difficult to read and maintain.
+3. **Technical debt:** ignoring linter warnings leads to the accumulation of technical debt, which becomes increasingly difficult to repay over time.
+4. **Complication of code review:** inconsistent code style and rule violations complicate the code review process and increase the time it takes to understand it.
+5. **Potential runtime errors:** many linter rules are aimed at preventing common errors that can occur at runtime (e.g., using variables before they are declared, improper comparison, etc.)
+6. **Scaling issues:** as the project and team grow, inconsistent code becomes a bigger problem, especially for new developers.
+7. **Complications of automation:** CI/CD processes often include linter checking, and a large number of errors can block automatic deployment.
