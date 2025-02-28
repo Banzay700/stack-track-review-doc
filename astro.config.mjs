@@ -12,6 +12,12 @@ export default defineConfig({
       },
       sidebar: [
         {
+          label: 'Application',
+          autogenerate: {
+            directory: 'application',
+          }
+        },
+        {
           label: 'Code Quality',
           items: [
             { label: 'Readability & Consistency', link: 'code-quality/readability-consistency' },
@@ -31,12 +37,6 @@ export default defineConfig({
             directory: 'performance-optimization',
           }
         },
-        {
-          label: 'Application',
-          autogenerate: {
-            directory: 'application',
-          }
-        }
       ],
     }),
   ],
