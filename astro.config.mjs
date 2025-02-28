@@ -30,6 +30,12 @@ export default defineConfig({
           autogenerate: {
             directory: 'performance-optimization',
           }
+        },
+        {
+          label: 'Application',
+          autogenerate: {
+            directory: 'application',
+          }
         }
       ],
     }),
